@@ -1,0 +1,35 @@
+@use '@angular/material' as mat;
+
+.container {
+    .logo {
+        margin-top: 14px;
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 80px;
+            height: 80px;
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+
+        .divider {
+            margin: 16px 0;
+            width: 100%;
+            height: 2px;
+            background-color: rgb(207, 207, 207);
+        }
+
+        .cancel {
+            margin-top: 90px;
+
+            @include mat.button-overrides((
+                filled-container-color: rgb(255, 217, 217),
+                filled-label-text-color: rgb(253, 74, 74)
+            ));
+        }
+    }
+}
