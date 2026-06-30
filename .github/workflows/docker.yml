@@ -26,11 +26,11 @@ jobs:
 
       - name: Build image
         run: |
-          docker build -t ghcr.io/solcredio-admin/miranda-clinics-web:latest .
+          docker build -t ghcr.io/Crafted4U/miranda-clinics-web:latest .
 
       - name: Push image
         run: |
-          docker push ghcr.io/solcredio-admin/miranda-clinics-web:latest
+          docker push ghcr.io/Crafted4U/miranda-clinics-web:latest
           
       - name: Deploy to VPS
         uses: appleboy/ssh-action@v1.2.2
