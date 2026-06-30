@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface QueueResponse {
@@ -25,7 +25,12 @@ export class QueueService {
   constructor(private http: HttpClient) {}
 
   getQueue(): Observable<QueueResponse> {
-    return this.http.get<QueueResponse>(`${this.api}/queue`);
+    const headers = new HttpHeaders({
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
+      'Pragma': 'no-cache',
+      'Expires': '0'
+    });
+    return this.http.get<QueueResponse>(`${this.api}/queue`, { headers });
   }
 
   updateRoom(room: string, number: number) {
