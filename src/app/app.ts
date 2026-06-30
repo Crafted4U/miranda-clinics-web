@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { QueueService } from './services/queue.service';
+import { QueueService, QueueResponse } from './services/queue.service';
 
 @Component({
   selector: 'app-root',
@@ -10,16 +10,18 @@ import { QueueService } from './services/queue.service';
 })
 export class App implements OnInit {
 
-  queue: any;
+  queue?: QueueResponse;
 
   constructor(private queueService: QueueService) {}
 
   ngOnInit(): void {
+
     this.loadQueue();
 
     setInterval(() => {
       this.loadQueue();
     }, 1000);
+
   }
 
   loadQueue() {

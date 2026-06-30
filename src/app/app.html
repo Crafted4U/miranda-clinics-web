@@ -329,7 +329,7 @@ footer h2{
         <div class="serving">
             <small>CURRENTLY SERVING</small>
             <div class="queue-number">
-                {{ queue?.room1?.number }}
+                {{ queue?.room1?.number ?? '---' }}
             </div>
         </div>
 
@@ -354,7 +354,7 @@ footer h2{
         <div class="serving">
             <small>CURRENTLY SERVING</small>
             <div class="queue-number">
-                {{ queue?.room2?.number }}
+                {{ queue?.room2?.number ?? '---' }}
             </div>
         </div>
 

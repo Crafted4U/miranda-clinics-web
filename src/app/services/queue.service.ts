@@ -2,6 +2,19 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+export interface QueueResponse {
+  room1: {
+    room: string;
+    doctor: string;
+    number: string;
+  };
+  room2: {
+    room: string;
+    doctor: string;
+    number: string;
+  };
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,12 +24,12 @@ export class QueueService {
 
   constructor(private http: HttpClient) {}
 
-  getQueue(): Observable<any> {
-    return this.http.get<any>(`${this.api}/queue`);
+  getQueue(): Observable<QueueResponse> {
+    return this.http.get<QueueResponse>(`${this.api}/queue`);
   }
 
-  updateRoom(room: string, number: number): Observable<any> {
-    return this.http.put<any>(`${this.api}/queue/${room}`, {
+  updateRoom(room: string, number: number) {
+    return this.http.put(`${this.api}/queue/${room}`, {
       number
     });
   }
