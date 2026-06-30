@@ -25,12 +25,15 @@ export class App implements OnInit {
   }
 
   loadQueue() {
+    console.log('loadQueue called');
     this.queueService.getQueue().subscribe({
       next: (data) => {
+        console.log('API response received:', data);
         this.queue = data;
+        console.log('queue assigned:', this.queue);
       },
       error: (err) => {
-        console.error(err);
+        console.error('API error:', err);
       }
     });
   }
