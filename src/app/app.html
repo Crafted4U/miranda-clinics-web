@@ -321,7 +321,7 @@ footer h2{
         <div class="room-header">
             <div class="room-name">INTERNAL MEDICINE</div>
             <div class="status" [class.status-in]="queue?.room1?.doctorIn" [class.status-out]="queue?.room1?.doctorIn === false">
-                {{ queue?.room1?.doctorIn ? 'Doctor is in' : 'Doctor is out' }}
+                {{ queue?.room1?.doctorIn ? 'Doctor is IN' : 'Doctor is OUT' }}
             </div>
         </div>
 
@@ -347,7 +347,7 @@ footer h2{
         <div class="room-header">
             <div class="room-name">PEDIA</div>
             <div class="status" [class.status-in]="queue?.room2?.doctorIn" [class.status-out]="queue?.room2?.doctorIn === false">
-                {{ queue?.room2?.doctorIn ? 'Doctor is in' : 'Doctor is out' }}
+                {{ queue?.room2?.doctorIn ? 'Doctor is IN' : 'Doctor is OUT' }}
             </div>
         </div>
 
